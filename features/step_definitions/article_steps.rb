@@ -9,7 +9,7 @@ When(/^I go to (.+)$/) do |page_name|
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  Article.find_by_title("#{arg1}")
+  !Article.where( title: "#{arg1}").first.blank?
 end
 
 Given(/^I have no articles$/) do
@@ -30,7 +30,7 @@ end
 
 # TODO: doesn`t work click to submit
 When(/^I press "(.*?)"$/) do |arg1|
-  click arg1
+  click_on arg1
 end
 
 Then(/^I should have ([0-9]+) articles?$/) do |count|
