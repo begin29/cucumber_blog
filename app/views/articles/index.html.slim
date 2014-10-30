@@ -1,0 +1,5 @@
+- unless flash.blank?
+  = flash[:notice]
+- @articles.each do |article|
+  p= article.title
+p= link_to "New Article", new_article_path

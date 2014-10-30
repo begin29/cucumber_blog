@@ -3,19 +3,19 @@ Feature: Manage Articles
   As an author
   I want to create and manage articles
 
-Scenario: Articles List
-  Given I have articles titled Pizza, Breadsticks
-  When I go to the list of articles
-  Then I should see "Pizza"
-  And I should see "Breadsticks"
+  Scenario: Articles List
+    Given I have articles titled Pizza, Breadsticks
+    When I go to the list of articles
+    Then I should see "Pizza"
+    And I should see "Breadsticks"
 
-Scenario: Create Valid Article
-  Given I have no articles
-  And I am on the list of articles
-  When I follow "New Article"
-  And I fill in "Title" with "Spuds"
-  And I press "Create"
-  Then I should see "New article created."
-  And I should see "Spuds"
-  And I should see "Delicious potato wedges!"
-  And I should have 1 article
+  @second_scenario
+  Scenario: Create Valid Article
+    Given I have no articles
+    And I am on the list of articles
+    When I follow "New Article"
+    And I fill in "Title" with "Spuds"
+    And I press "Create"
+    Then I should see "New article created."
+    And I should see "Spuds"
+    And I should have 1 article

@@ -9,7 +9,7 @@ When(/^I go to (.+)$/) do |page_name|
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  !Article.where( title: "#{arg1}").first.blank?
+   page.should have_content arg1
 end
 
 Given(/^I have no articles$/) do

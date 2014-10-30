@@ -1,5 +1,0 @@
-<%= flash[:notice] %>
-<% @articles.each do |article| %>
-  <p><%=h article.title %></p>
-<% end %>
-<p><%= link_to "New Article", new_article_path %></p>
